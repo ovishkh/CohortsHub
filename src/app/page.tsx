@@ -193,7 +193,7 @@ export default function Home() {
         );
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden">
+    <div className="flex flex-col min-h-screen overflow-x-hidden" style={{gap: 0}}>
       
       {/* 1. Hero Section (Hero_Frame #1:1695 - 1440x1024) */}
       <section className="relative bg-[#003BE2] w-full overflow-hidden" style={{height: 'clamp(760px, 71.1vw, 1024px)'}}>
@@ -235,26 +235,22 @@ export default function Home() {
         </div>
 
         {/* ── Visuals Layer (absolute, fills entire section) ─────────────── */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
           <div className="relative w-full max-w-[1440px] h-full mx-auto">
 
             {/*
-              LIME DOME  (#1:1866 in Figma)
-              Figma: x=145, y=582, w=1149, h=1149  (1440px frame)
-              Center of circle: x=145+1149/2=719.5  y=582+1149/2=1156.5
-              At 1440px width  → center-x is dead-center (720px).
-              The circle center sits at y=1156 which is BELOW the 1024px hero
-              → roughly 132px below bottom.  So top of circle = 582px.
-              We translate this proportionally: top = 56.8% of hero height.
+              LIME DOME — anchored from bottom so it ALWAYS bleeds past hero edge.
+              A solid lime rectangle at the very bottom fills any corner gaps from the circle arc.
             */}
+            {/* Lime fill strip — eliminates any blue gap at section bottom corners */}
+            <div className="absolute bottom-0 left-0 right-0 h-[130px] bg-[#CBFC01] z-10 pointer-events-none" />
+            {/* Main lime dome circle */}
             <div
               className="absolute left-1/2 -translate-x-1/2 rounded-full bg-[#CBFC01] z-10 pointer-events-none"
               style={{
-                /* Scale the 1149px circle relative to viewport width, capped at 1149px */
-                width:  'clamp(480px, 79.8vw, 1149px)',
-                height: 'clamp(480px, 79.8vw, 1149px)',
-                /* top = 582/1024 = 56.8% of hero height */
-                top: 'clamp(380px, 56.8%, 582px)',
+                width:  'clamp(500px, 82vw, 1149px)',
+                height: 'clamp(500px, 82vw, 1149px)',
+                bottom: '-120px',
               }}
             />
 
@@ -351,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* 2. Trusted By (Logos) - Continuous Marquee Ticker */}
-      <section className="bg-[#FAFAFA] h-[120px] sm:h-[160px] lg:h-[202px] flex items-center justify-center border-b border-shuttle-gray-100 overflow-hidden relative">
+      <section className="bg-white h-[100px] sm:h-[140px] lg:h-[180px] flex items-center justify-center border-b border-shuttle-gray-100 overflow-hidden relative -mt-px">
         <div className="w-full flex items-center overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
           <div className="flex shrink-0 animate-marquee items-center gap-12 sm:gap-20 lg:gap-28 py-2 hover:[animation-play-state:paused] cursor-pointer">
             <Image src="/logo-strip.svg" alt="Trusted Companies" width={1132} height={42} className="h-7 sm:h-9 lg:h-11 w-auto opacity-60 grayscale hover:grayscale-0 transition-all" />
