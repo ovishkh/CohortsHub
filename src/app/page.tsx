@@ -239,18 +239,15 @@ export default function Home() {
           <div className="relative w-full max-w-[1440px] h-full mx-auto">
 
             {/*
-              LIME DOME — anchored from bottom so it ALWAYS bleeds past hero edge.
-              A solid lime rectangle at the very bottom fills any corner gaps from the circle arc.
+              LIME DOME — Figma: x=145, y=582, w=1149, h=1149 in 1440×1024 frame.
+              Circle top at 56.8% of hero height scales perfectly at all sizes.
             */}
-            {/* Lime fill strip — eliminates any blue gap at section bottom corners */}
-            <div className="absolute bottom-0 left-0 right-0 h-[130px] bg-[#CBFC01] z-10 pointer-events-none" />
-            {/* Main lime dome circle */}
             <div
               className="absolute left-1/2 -translate-x-1/2 rounded-full bg-[#CBFC01] z-10 pointer-events-none"
               style={{
-                width:  'clamp(500px, 82vw, 1149px)',
-                height: 'clamp(500px, 82vw, 1149px)',
-                bottom: '-120px',
+                width:  'clamp(500px, 79.8vw, 1149px)',
+                height: 'clamp(500px, 79.8vw, 1149px)',
+                top:    'clamp(390px, 56.8%, 582px)',
               }}
             />
 
