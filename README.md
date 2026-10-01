@@ -12,9 +12,10 @@ A pixel-perfect, high-performance implementation of the **ByteSpace New** web ap
 
 ## 🔗 Quick Links
 
-- **Live Deployment (Vercel)**: [https://cohortshub-bytespace.vercel.app](https://cohortshub.vercel.app) *(or live Vercel URL)*
-- **GitHub Repository**: [https://github.com/ovishkh/Cohortshub](https://github.com/ovishkh/Cohortshub)
-- **Active Feature Branch**: [`feat/bytespace-landing-auth`](https://github.com/ovishkh/Cohortshub/tree/feat/bytespace-landing-auth)
+- **Live Deployment (Vercel)**: [https://cohortshub.vercel.app](https://cohortshub.vercel.app) *(or your deployed Vercel URL)*
+- **GitHub Repository**: [https://github.com/ovishkh/CohortsHub](https://github.com/ovishkh/CohortsHub)
+- **Active Feature Branch**: [`feat/bytespace-landing-auth`](https://github.com/ovishkh/CohortsHub/tree/feat/bytespace-landing-auth)
+- **Pull Request**: [Open Pull Request for feat/bytespace-landing-auth](https://github.com/ovishkh/CohortsHub/pull/new/feat/bytespace-landing-auth)
 - **Figma Design Reference**: [ByteSpace New Check website (Node 0:1)](https://www.figma.com/design/26TBgRjmpuxudcErJsHUfy/ByteSpace-New-Check-website?node-id=0-1&p=f&t=eQOrqJmq6rMG5b6L-0)
 
 ---
