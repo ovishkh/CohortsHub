@@ -197,45 +197,39 @@ export default function Home() {
       
       {/* 1. Hero Section (Hero_Frame #1:1695 - 1440x1024) */}
       <section className="relative bg-[#003BE2] w-full min-h-[760px] sm:min-h-[860px] lg:h-[1024px] overflow-hidden flex flex-col items-center pt-24 sm:pt-28 lg:pt-[140px] pb-0">
-        {/* Faint Background Grid */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-12 z-0 pointer-events-none" />
+        {/* Crisp Background Grid */}
+        <div className="absolute inset-0 bg-grid-pattern z-0 pointer-events-none" />
 
         {/* Hero Content Wrapper (Headline & Search) */}
         <div className="relative z-30 flex flex-col items-center text-center w-full max-w-[1200px] px-4 sm:px-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#CBFC01] text-xs sm:text-sm font-medium mb-4 sm:mb-6 animate-pulse">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Over 10,000+ interactive courses available</span>
-          </div>
-
           <h1 className="text-white font-poppins font-semibold text-[34px] xs:text-[42px] sm:text-[54px] lg:text-[64px] leading-[1.15] lg:leading-[1.1] tracking-tight whitespace-pre-line mb-4 lg:mb-6 max-w-4xl">
             {`Get Access to Hundreds\nCourses Available`}
           </h1>
           
-          <p className="text-white/80 text-[15px] sm:text-[18px] lg:text-[20px] leading-relaxed max-w-2xl font-satoshi mb-6 sm:mb-8 lg:mb-12 px-2">
+          <p className="text-white/80 text-[15px] sm:text-[18px] lg:text-[20px] leading-relaxed max-w-2xl font-satoshi mb-6 sm:mb-8 lg:mb-10 px-2">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
           </p>
           
-          {/* Interactive Search Bar Form */}
+          {/* Exact Figma Search Bar (#1:1772: Input Pill 461x52 + Button Pill + 16px Gap) */}
           <form
             onSubmit={handleSearchSubmit}
-            className="bg-white p-1.5 sm:p-2 rounded-full flex items-center justify-between w-full max-w-[720px] shadow-2xl relative z-40 transition-shadow focus-within:ring-4 focus-within:ring-[#CBFC01]/40"
+            className="flex items-center justify-center gap-3 sm:gap-4 w-full max-w-[580px] relative z-40 mx-auto"
           >
-            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-6 w-full">
-              <Search className="text-shuttle-gray-400 shrink-0 w-5 h-5 sm:w-6 sm:h-6" />
+            <div className="bg-white rounded-full px-5 sm:px-6 h-[48px] sm:h-[52px] flex items-center gap-2.5 sm:gap-3 flex-1 max-w-[461px] shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+              <Search className="text-shuttle-gray-400 shrink-0 w-5 h-5" />
               <input 
                 type="text" 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Course, topic, or creator..." 
-                className="bg-transparent border-none outline-none text-shuttle-gray-800 w-full placeholder:text-shuttle-gray-400 font-satoshi text-[14px] sm:text-[16px] h-11 sm:h-12"
+                placeholder="Course, topic, creator" 
+                className="bg-transparent border-none outline-none text-shuttle-gray-800 w-full placeholder:text-shuttle-gray-400 font-satoshi text-[14px] sm:text-[15px] h-full"
               />
             </div>
             <button 
               type="submit"
-              className="bg-[#CBFC01] text-shuttle-gray-950 font-bold px-5 sm:px-8 py-2.5 sm:py-3.5 rounded-full whitespace-nowrap hover:bg-[#bbf000] active:scale-95 transition-all text-[14px] sm:text-[16px] cursor-pointer shadow-md shrink-0 flex items-center gap-1.5"
+              className="bg-[#CBFC01] hover:bg-[#bbf000] text-shuttle-gray-950 font-bold px-6 sm:px-8 h-[48px] sm:h-[52px] rounded-full whitespace-nowrap shadow-[0_8px_25px_rgba(203,252,1,0.25)] hover:scale-105 active:scale-95 transition-all text-[15px] sm:text-[16px] cursor-pointer shrink-0 font-satoshi"
             >
-              <span>Search</span>
-              <ArrowRight className="w-4 h-4 hidden xs:inline" />
+              Search
             </button>
           </form>
         </div>
@@ -243,54 +237,49 @@ export default function Home() {
         {/* Hero Visuals Container - Clamped to 1440px Figma Frame */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="relative w-full max-w-[1440px] h-full mx-auto">
-            {/* Exact Figma Lime Circle Dome (#1:1866) */}
-            <div className="absolute top-[440px] sm:top-[490px] lg:top-[582px] left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[1149px] h-[600px] sm:h-[850px] lg:h-[1149px] rounded-full bg-[#CBFC01] z-0 pointer-events-none shadow-[0_0_80px_rgba(203,252,1,0.2)]" />
+            {/* Exact Figma Lime Ring with Blue Center (#1:1866: x: 145, y: 582, w: 1149, h: 1149, stroke: 320px) */}
+            <div className="absolute top-[440px] sm:top-[490px] lg:top-[582px] left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[1149px] h-[600px] sm:h-[850px] lg:h-[1149px] rounded-full border-[80px] sm:border-[130px] lg:border-[180px] border-[#CBFC01] bg-transparent z-0 pointer-events-none shadow-[0_0_80px_rgba(203,252,1,0.15)]" />
 
-            {/* 3D Ornaments (#46:79) */}
+            {/* 3D Ornaments (#46:79: x: -118, y: 221, w: 1719, h: 803) */}
             <div className="absolute top-[180px] sm:top-[200px] lg:top-[221px] left-1/2 -translate-x-1/2 w-[900px] sm:w-[1300px] lg:w-[1550px] xl:w-[1719px] h-[550px] sm:h-[650px] lg:h-[803px] z-10 pointer-events-none">
               <Image src="/3d-ornaments.png" alt="3D Shapes" fill className="object-contain" priority />
             </div>
 
-            {/* Student Boy Graphic (#1:1796) */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] xs:w-[390px] sm:w-[490px] lg:w-[578px] h-[330px] xs:h-[370px] sm:h-[460px] lg:h-[512px] z-20 pointer-events-none">
-              <Image src="/hero.png" alt="Hero Student" fill className="object-contain object-bottom" priority />
+            {/* Student Boy Graphic - Centered in Circle (#1:1796: x: 431, y: 512, w: 578, h: 541) */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[340px] xs:w-[390px] sm:w-[490px] lg:w-[578px] h-[330px] xs:h-[370px] sm:h-[460px] lg:h-[541px] z-20 pointer-events-none">
+              <Image src="/hero.png" alt="Hero Student" fill className="object-contain object-bottom drop-shadow-[0_20px_30px_rgba(0,0,0,0.18)]" priority />
             </div>
 
-            {/* Floating UI Card 1: UI/UX Design (#46:126) - visible on tablet and desktop */}
-            <div className="pointer-events-auto hidden sm:flex absolute sm:top-[540px] lg:top-[639px] sm:left-[4%] lg:left-1/2 lg:-translate-x-[316px] bg-white/95 backdrop-blur-md rounded-[18px] sm:rounded-[20px] p-3 sm:p-4 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 items-center gap-3 sm:gap-4 w-[240px] sm:w-[280px] transition-all duration-300 hover:scale-105 animate-float">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl flex items-center justify-center text-lg sm:text-xl shadow-sm border border-shuttle-gray-100 shrink-0">
-                <PenTool className="w-5 h-5 sm:w-6 sm:h-6 text-[#003BE2]" />
-              </div>
-              <div className="overflow-hidden">
-                <p className="font-bold text-shuttle-gray-950 font-satoshi text-[13px] sm:text-[15px] mb-0.5 truncate">UI/UX Design</p>
-                <p className="text-shuttle-gray-400 text-[11px] sm:text-[12px] truncate">200 Courses • 1k+ Students</p>
-              </div>
+            {/* Floating UI Card 1: UI/UX Design (#46:126) - Compact & beside model */}
+            <div className="pointer-events-auto hidden sm:flex absolute sm:top-[530px] lg:top-[590px] sm:left-[4%] lg:left-1/2 lg:-translate-x-[360px] bg-white/95 backdrop-blur-md rounded-[16px] px-4 sm:px-5 py-3 sm:py-3.5 shadow-[0px_20px_40px_rgba(0,0,0,0.12)] z-30 flex-col w-fit max-w-[210px] transition-all duration-300 hover:scale-105 animate-float border border-white/40">
+              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[14px] sm:text-[15px] leading-tight">UI/UX Design</p>
+              <p className="text-shuttle-gray-400 text-[11px] sm:text-[12px] font-satoshi mt-0.5 whitespace-nowrap">200 Courses • 1000+ Students</p>
             </div>
 
-            {/* Floating UI Card 2: Learning Progress (#1:1797) */}
-            <div className="pointer-events-auto absolute bottom-[105px] xs:bottom-[120px] sm:bottom-auto sm:top-[560px] lg:top-[651px] right-2 sm:right-[4%] lg:right-auto lg:left-1/2 lg:translate-x-[122px] bg-white/95 backdrop-blur-md rounded-[16px] sm:rounded-[20px] p-3 sm:p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 w-[160px] xs:w-[185px] sm:w-[240px] transition-all duration-300 hover:scale-105 animate-float-delayed">
-              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[11px] sm:text-[14px] mb-0.5 sm:mb-1">Learning Progress</p>
-              <p className="text-[20px] sm:text-[32px] font-poppins font-bold text-shuttle-gray-950 mb-1.5 sm:mb-3 leading-tight">55%</p>
-              <div className="w-full bg-shuttle-gray-100 h-1.5 sm:h-2.5 rounded-full overflow-hidden">
+            {/* Floating UI Card 2: Learning Progress (#1:1797) - Beside model on right */}
+            <div className="pointer-events-auto absolute bottom-[105px] xs:bottom-[120px] sm:bottom-auto sm:top-[540px] lg:top-[600px] right-2 sm:right-[4%] lg:right-auto lg:left-1/2 lg:translate-x-[130px] bg-white/95 backdrop-blur-md rounded-[16px] p-3.5 sm:p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.12)] z-30 w-[160px] xs:w-[185px] sm:w-[220px] lg:w-[230px] transition-all duration-300 hover:scale-105 animate-float-delayed border border-white/40">
+              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[12px] sm:text-[14px] mb-1 leading-tight">Learning Progress</p>
+              <p className="text-[24px] sm:text-[32px] font-poppins font-bold text-shuttle-gray-950 mb-2 sm:mb-3 leading-tight">55%</p>
+              <div className="w-full bg-shuttle-gray-100 h-2 sm:h-2.5 rounded-full overflow-hidden">
                 <div className="bg-[#CBFC01] w-[55%] h-full rounded-full transition-all duration-1000" />
               </div>
             </div>
 
-            {/* Floating UI Card 3: Happy Students (#1:1821) */}
-            <div className="pointer-events-auto absolute bottom-4 sm:bottom-auto sm:top-[710px] lg:top-[837px] left-2 sm:left-[6%] lg:left-1/2 lg:-translate-x-[392px] bg-white/95 backdrop-blur-md rounded-[16px] sm:rounded-[20px] p-3 sm:p-4 lg:p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 w-[180px] xs:w-[205px] sm:w-[258px] transition-all duration-300 hover:scale-105 animate-float-reverse">
-              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[11px] sm:text-[14px] mb-1 sm:mb-2">Happy Students</p>
-              <div className="flex items-center gap-1 sm:gap-2 mb-1.5 sm:mb-3">
+            {/* Floating UI Card 3: Happy Students (#1:1821) - Bottom left beside model */}
+            <div className="pointer-events-auto absolute bottom-4 sm:bottom-auto sm:top-[710px] lg:top-[837px] left-2 sm:left-[6%] lg:left-1/2 lg:-translate-x-[392px] bg-white/95 backdrop-blur-md rounded-[16px] p-3 sm:p-4 lg:p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.12)] z-30 w-[180px] xs:w-[205px] sm:w-[240px] lg:w-[258px] transition-all duration-300 hover:scale-105 animate-float-reverse border border-white/40">
+              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[12px] sm:text-[14px] mb-1 sm:mb-1.5 leading-tight">Happy Students</p>
+              <div className="flex items-center gap-1 sm:gap-2 mb-1.5 sm:mb-2.5">
                 <span className="font-bold text-[14px] sm:text-[18px] text-shuttle-gray-950 leading-none">4.5</span>
                 <span className="text-[#CBFC01] text-[15px] sm:text-[20px] leading-none">★</span>
                 <span className="text-shuttle-gray-400 text-[10px] sm:text-[12px] leading-none mt-0.5">(240)</span>
               </div>
               <div className="flex -space-x-2 sm:-space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-6 h-6 sm:w-9 sm:h-9 rounded-full border-2 border-white bg-shuttle-gray-200 relative overflow-hidden shadow-sm">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full border-2 border-white bg-shuttle-gray-200 relative overflow-hidden shadow-sm">
                     <Image src="/hero.png" alt="Avatar" fill className="object-cover" />
                   </div>
                 ))}
-                <div className="w-6 h-6 sm:w-9 sm:h-9 rounded-full border-2 border-white bg-[#CBFC01] flex items-center justify-center text-[9px] sm:text-[11px] font-bold text-shuttle-gray-950 z-10 relative shadow-sm">
+                <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-9 lg:h-9 rounded-full border-2 border-white bg-[#CBFC01] flex items-center justify-center text-[9px] sm:text-[10px] lg:text-[11px] font-bold text-shuttle-gray-950 z-10 relative shadow-sm">
                   2k+
                 </div>
               </div>
