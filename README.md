@@ -108,7 +108,9 @@ Every section from the Figma `Home` frame (`#1:1067`, 1440×6377px) is faithfull
 Cohortshub/
 ├── .agents/
 │   └── skills/
-│       └── figma-frontend-collector/ # Custom skill for extracting Figma tokens & UI
+│       ├── figma-frontend-collector/ # Custom skill for extracting Figma tokens & UI
+│       │   └── SKILL.md
+│       └── nextjs-tailwind-frontend/ # Specialized Next.js 16, React 19 & Tailwind v4 skill
 │           └── SKILL.md
 ├── public/                           # Static assets, 3D graphics, course images, SVGs
 │   ├── 3d-ornaments.png
