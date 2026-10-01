@@ -64,18 +64,18 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       
-      {/* 1. Hero Section (Hero_Frame) */}
-      <section className="relative bg-[#003BE2] w-full min-h-[850px] flex flex-col items-center pt-32 pb-0">
+      {/* 1. Hero Section (Hero_Frame #1:1695 - 1440x1024) */}
+      <section className="relative bg-[#003BE2] w-full min-h-[850px] lg:h-[1024px] overflow-hidden flex flex-col items-center pt-28 lg:pt-[140px] pb-0">
         {/* Faint Background Grid */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-12 z-0 pointer-events-none"></div>
 
-        {/* Hero Content Wrapper */}
-        <div className="relative z-30 flex flex-col items-center text-center w-full max-w-4xl px-4 mt-8">
-          <h1 className="text-white font-poppins font-semibold text-[56px] md:text-[64px] leading-[1.1] tracking-tight whitespace-pre-line mb-6">
+        {/* Hero Content Wrapper (Headline & Search) */}
+        <div className="relative z-30 flex flex-col items-center text-center w-full max-w-[1200px] px-4">
+          <h1 className="text-white font-poppins font-semibold text-[44px] sm:text-[56px] lg:text-[64px] leading-[1.1] tracking-tight whitespace-pre-line mb-4 lg:mb-6">
             {`Get Access to Hundreds\nCourses Available`}
           </h1>
           
-          <p className="text-white/80 text-[18px] md:text-[20px] leading-relaxed max-w-2xl font-satoshi mb-12">
+          <p className="text-white/80 text-[16px] sm:text-[18px] lg:text-[20px] leading-relaxed max-w-2xl font-satoshi mb-8 lg:mb-12">
             Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.
           </p>
           
@@ -92,67 +92,69 @@ export default function Home() {
                 className="bg-transparent border-none outline-none text-shuttle-gray-600 w-full placeholder:text-shuttle-gray-400 font-satoshi text-[16px] h-12"
               />
             </div>
-            <button className="bg-[#CBFC01] text-shuttle-gray-950 font-bold px-8 py-3.5 rounded-full whitespace-nowrap hover:bg-[#b0d900] transition-colors text-[16px]">
+            <button className="bg-[#CBFC01] text-shuttle-gray-950 font-bold px-8 py-3.5 rounded-full whitespace-nowrap hover:bg-[#b0d900] transition-colors text-[16px] cursor-pointer">
               Search
             </button>
           </div>
         </div>
 
-        {/* Hero Graphics Container */}
-        <div className="relative w-full max-w-[1200px] h-[450px] mt-8 z-20 flex justify-center">
-          
-          {/* Large Lime Circle (Solid) */}
-          <div className="absolute top-[20px] left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#CBFC01] z-0"></div>
-          
-          {/* 3D Ornaments */}
-          <div className="absolute top-[-50px] left-1/2 -translate-x-1/2 w-[1100px] h-[600px] z-10 pointer-events-none">
-            <Image src="/3d-ornaments.png" alt="3D Shapes" fill className="object-contain" priority />
-          </div>
+        {/* Hero Visuals Container - Clamped to 1440px Figma Frame */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="relative w-full max-w-[1440px] h-full mx-auto">
+            {/* Exact Figma Lime Circle Dome (#1:1866: x: 145, y: 582, w: 1149, h: 1149) */}
+            <div className="absolute top-[480px] lg:top-[582px] left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] lg:w-[1149px] h-[700px] sm:h-[900px] lg:h-[1149px] rounded-full bg-[#CBFC01] z-0 pointer-events-none shadow-[0_0_80px_rgba(203,252,1,0.15)]" />
 
-          {/* Boy Graphic */}
-          <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[578px] h-[541px] z-20 pointer-events-none">
-             <Image src="/hero.png" alt="Hero Student" fill className="object-contain object-bottom" priority />
-          </div>
+            {/* 3D Ornaments (#46:79: x: -118, y: 221, w: 1719, h: 803) */}
+            <div className="absolute top-[200px] lg:top-[221px] left-1/2 -translate-x-1/2 w-[1000px] sm:w-[1300px] lg:w-[1550px] xl:w-[1719px] h-[650px] lg:h-[803px] z-10 pointer-events-none">
+              <Image src="/3d-ornaments.png" alt="3D Shapes" fill className="object-contain" priority />
+            </div>
 
-          {/* Floating UI Cards */}
-          {/* UI/UX Design */}
-          <div className="absolute top-[80px] left-[5%] md:left-[15%] bg-white/95 backdrop-blur-md rounded-[20px] p-4 shadow-[0px_20px_40px_rgba(0,0,0,0.1)] z-30 flex items-center gap-4 w-[280px]">
-            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-xl shadow-sm border border-shuttle-gray-100 shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.071 5.929l4 4M5.929 14.071l4 4" stroke="#003BE2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M4.515 15.485l9.9-9.9a2.828 2.828 0 014 0 2.828 2.828 0 010 4l-9.9 9.9a2.828 2.828 0 01-4 0 2.828 2.828 0 010-4z" stroke="#003BE2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            {/* Student Boy Graphic (#1:1796: x: 431, y: 512, w: 578, h: 541) */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[460px] sm:w-[520px] lg:w-[578px] h-[440px] sm:h-[490px] lg:h-[512px] z-20 pointer-events-none">
+              <Image src="/hero.png" alt="Hero Student" fill className="object-contain object-bottom" priority />
             </div>
-            <div>
-              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[15px] mb-0.5">UI/UX Design</p>
-              <p className="text-shuttle-gray-400 text-[12px]">200 Courses • 1000+ Students</p>
+
+            {/* Floating UI Card 1: UI/UX Design (#46:126: x: 404, y: 639) */}
+            <div className="pointer-events-auto absolute top-[520px] sm:top-[570px] lg:top-[639px] left-[5%] sm:left-[10%] lg:left-1/2 lg:-translate-x-[316px] bg-white/95 backdrop-blur-md rounded-[20px] p-4 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 flex items-center gap-4 w-[260px] sm:w-[280px] transition-transform duration-300 hover:scale-105">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-xl shadow-sm border border-shuttle-gray-100 shrink-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.071 5.929l4 4M5.929 14.071l4 4" stroke="#003BE2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M4.515 15.485l9.9-9.9a2.828 2.828 0 014 0 2.828 2.828 0 010 4l-9.9 9.9a2.828 2.828 0 01-4 0 2.828 2.828 0 010-4z" stroke="#003BE2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-bold text-shuttle-gray-950 font-satoshi text-[15px] mb-0.5">UI/UX Design</p>
+                <p className="text-shuttle-gray-400 text-[12px]">200 Courses • 1000+ Students</p>
+              </div>
+            </div>
+
+            {/* Floating UI Card 2: Learning Progress (#1:1797: x: 842, y: 651) */}
+            <div className="pointer-events-auto absolute top-[530px] sm:top-[580px] lg:top-[651px] right-[5%] sm:right-[10%] lg:right-auto lg:left-1/2 lg:translate-x-[122px] bg-white/95 backdrop-blur-md rounded-[20px] p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 w-[220px] sm:w-[240px] transition-transform duration-300 hover:scale-105">
+              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[14px] mb-1">Learning Progress</p>
+              <p className="text-[32px] font-poppins font-bold text-shuttle-gray-950 mb-3 leading-tight">55%</p>
+              <div className="w-full bg-shuttle-gray-100 h-2.5 rounded-full overflow-hidden">
+                <div className="bg-[#CBFC01] w-[55%] h-full rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Floating UI Card 3: Happy Students (#1:1821: x: 328, y: 837) */}
+            <div className="pointer-events-auto absolute top-[680px] sm:top-[740px] lg:top-[837px] left-[8%] sm:left-[15%] lg:left-1/2 lg:-translate-x-[392px] bg-white/95 backdrop-blur-md rounded-[20px] p-4 sm:p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.15)] z-30 w-[230px] sm:w-[258px] transition-transform duration-300 hover:scale-105">
+              <p className="font-bold text-shuttle-gray-950 font-satoshi text-[14px] mb-2">Happy Students</p>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="font-bold text-[18px] text-shuttle-gray-950 leading-none">4.5</span>
+                <span className="text-[#CBFC01] text-[20px] leading-none">★</span>
+                <span className="text-shuttle-gray-400 text-[12px] leading-none mt-1">(240)</span>
+              </div>
+              <div className="flex -space-x-3">
+                {[1,2,3,4,5].map((i) => (
+                  <div key={i} className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-[3px] border-white bg-shuttle-gray-200 relative overflow-hidden shadow-sm">
+                    <Image src="/hero.png" alt="Avatar" fill className="object-cover" />
+                  </div>
+                ))}
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-[3px] border-white bg-[#CBFC01] flex items-center justify-center text-[11px] font-bold text-shuttle-gray-950 z-10 relative shadow-sm">2k+</div>
+              </div>
             </div>
           </div>
-
-          {/* Learning Progress */}
-          <div className="absolute top-[120px] right-[5%] md:right-[15%] bg-white/95 backdrop-blur-md rounded-[20px] p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.1)] z-30 w-[240px]">
-            <p className="font-bold text-shuttle-gray-950 font-satoshi text-[14px] mb-1">Learning Progress</p>
-            <p className="text-[32px] font-poppins font-bold text-shuttle-gray-950 mb-3 leading-tight">55%</p>
-            <div className="w-full bg-shuttle-gray-100 h-2.5 rounded-full overflow-hidden">
-              <div className="bg-[#CBFC01] w-[55%] h-full rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Happy Students */}
-          <div className="absolute bottom-[-40px] left-[10%] md:left-[22%] bg-white/95 backdrop-blur-md rounded-[20px] p-5 shadow-[0px_20px_40px_rgba(0,0,0,0.1)] z-30 w-[240px]">
-            <p className="font-bold text-shuttle-gray-950 font-satoshi text-[14px] mb-3">Happy Students</p>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="font-bold text-[18px] text-shuttle-gray-950 leading-none">4.5</span>
-              <span className="text-[#CBFC01] text-[20px] leading-none">★</span>
-              <span className="text-shuttle-gray-400 text-[12px] leading-none mt-1">(240)</span>
-            </div>
-            <div className="flex -space-x-3">
-              {[1,2,3,4,5].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-[3px] border-white bg-shuttle-gray-200 relative overflow-hidden shadow-sm">
-                  <Image src="/hero.png" alt="Avatar" fill className="object-cover" />
-                </div>
-              ))}
-              <div className="w-10 h-10 rounded-full border-[3px] border-white bg-[#CBFC01] flex items-center justify-center text-[11px] font-bold text-shuttle-gray-950 z-10 relative shadow-sm">2k+</div>
-            </div>
-          </div>
-
         </div>
       </section>
 
