@@ -57,21 +57,19 @@ Always preserve the exact color tokens, typography scales, and spacing defined i
 
 ---
 
-## 3. Figma Collection Standards (Frontend Protocol)
+## 3. Specialized Frontend & Figma Skills
 
-When implementing or modifying UI based on Figma files:
+The codebase includes two dedicated skills located in `.agents/skills/`:
 
-1. **Use the `figma-frontend-collector` Skill**:
-   - Reference `.agents/skills/figma-frontend-collector/SKILL.md` for exact steps.
-2. **Node ID Mapping**:
-   - Always map URL hyphens to colons (`node-id=0-1` -> `0:1`, `node-id=47-351` -> `47:351`).
-3. **Auto-Layout to Tailwind**:
-   - Translate Figma auto-layout modes, gap, padding, and alignment into standard Flexbox/Grid Tailwind utilities.
-   - Do not hardcode arbitrary positioning unless reproducing intentional floating 3D badge decorations.
-4. **Asset Optimization**:
-   - Store all static visual assets in `/public`.
-   - Use Next.js `<Image />` component with optimized dimensions, `alt` descriptions, and `priority` on above-the-fold assets.
-   - For UI icons, utilize `lucide-react` or clean inline SVGs matching the Figma vectors.
+1. **`figma-frontend-collector`**:
+   - Reference: `.agents/skills/figma-frontend-collector/SKILL.md`
+   - Purpose: Step-by-step extraction of Figma node trees, auto-layout conversion, design token parsing, and asset downloads.
+   - Node ID Mapping: Always map URL hyphens to colons (`node-id=0-1` -> `0:1`, `node-id=47-351` -> `47:351`).
+
+2. **`nextjs-tailwind-frontend`**:
+   - Reference: `.agents/skills/nextjs-tailwind-frontend/SKILL.md`
+   - Purpose: Modern Next.js 16 (App Router), React 19, and Tailwind CSS v4 patterns for building high-performance, accessible, responsive components.
+   - Core Focus: Server/Client component boundary hygiene, Next.js `<Image />` optimization, CSS-first `@theme` design tokens, and zero-error builds.
 
 ---
 
